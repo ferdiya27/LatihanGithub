@@ -13,7 +13,6 @@ namespace LatihanGithub
     public partial class FormSiswa : Form
     {
         string koneksi = "server=localhost;database=dbsekolah;uid=root;pwd=;";
-
         public FormSiswa()
         {
             InitializeComponent();
