@@ -36,14 +36,14 @@
             label6 = new Label();
             txtNISN = new TextBox();
             txtTelepon = new TextBox();
-            txtKelas = new TextBox();
             txtNama = new TextBox();
-            dgvTampilData = new DataGridView();
+            dgvSiswa = new DataGridView();
             btnKembali = new Button();
             btnSimpan = new Button();
             btnHapus = new Button();
             dtpTanggalLahir = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dgvTampilData).BeginInit();
+            cmbKelas = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvSiswa).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,13 +121,6 @@
             txtTelepon.Size = new Size(399, 31);
             txtTelepon.TabIndex = 8;
             // 
-            // txtKelas
-            // 
-            txtKelas.Location = new Point(299, 187);
-            txtKelas.Name = "txtKelas";
-            txtKelas.Size = new Size(399, 31);
-            txtKelas.TabIndex = 9;
-            // 
             // txtNama
             // 
             txtNama.Location = new Point(299, 140);
@@ -135,14 +128,15 @@
             txtNama.Size = new Size(399, 31);
             txtNama.TabIndex = 10;
             // 
-            // dgvTampilData
+            // dgvSiswa
             // 
-            dgvTampilData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTampilData.Location = new Point(12, 449);
-            dgvTampilData.Name = "dgvTampilData";
-            dgvTampilData.RowHeadersWidth = 62;
-            dgvTampilData.Size = new Size(822, 195);
-            dgvTampilData.TabIndex = 11;
+            dgvSiswa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSiswa.Location = new Point(12, 449);
+            dgvSiswa.Name = "dgvSiswa";
+            dgvSiswa.RowHeadersWidth = 62;
+            dgvSiswa.Size = new Size(822, 195);
+            dgvSiswa.TabIndex = 11;
+            dgvSiswa.CellContentClick += dgvSiswa_CellContentClick;
             // 
             // btnKembali
             // 
@@ -161,6 +155,7 @@
             btnSimpan.TabIndex = 13;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
+            btnSimpan.Click += btnSimpan_Click;
             // 
             // btnHapus
             // 
@@ -170,6 +165,7 @@
             btnHapus.TabIndex = 14;
             btnHapus.Text = "Hapus";
             btnHapus.UseVisualStyleBackColor = true;
+            btnHapus.Click += btnHapus_Click;
             // 
             // dtpTanggalLahir
             // 
@@ -178,18 +174,27 @@
             dtpTanggalLahir.Size = new Size(399, 31);
             dtpTanggalLahir.TabIndex = 15;
             // 
+            // cmbKelas
+            // 
+            cmbKelas.FormattingEnabled = true;
+            cmbKelas.Items.AddRange(new object[] { "", "XII RPL", "XII BUSANA", "XII KIMIA", "XII PERHOTELAN", "XII KECANTIKAN" });
+            cmbKelas.Location = new Point(299, 187);
+            cmbKelas.Name = "cmbKelas";
+            cmbKelas.Size = new Size(399, 33);
+            cmbKelas.TabIndex = 16;
+            // 
             // FormSiswa
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 655);
+            Controls.Add(cmbKelas);
             Controls.Add(dtpTanggalLahir);
             Controls.Add(btnHapus);
             Controls.Add(btnSimpan);
             Controls.Add(btnKembali);
-            Controls.Add(dgvTampilData);
+            Controls.Add(dgvSiswa);
             Controls.Add(txtNama);
-            Controls.Add(txtKelas);
             Controls.Add(txtTelepon);
             Controls.Add(txtNISN);
             Controls.Add(label6);
@@ -200,7 +205,8 @@
             Controls.Add(label1);
             Name = "FormSiswa";
             Text = "FormSiswa";
-            ((System.ComponentModel.ISupportInitialize)dgvTampilData).EndInit();
+            Load += FormSiswa_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvSiswa).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,12 +221,12 @@
         private Label label6;
         private TextBox txtNISN;
         private TextBox txtTelepon;
-        private TextBox txtKelas;
         private TextBox txtNama;
-        private DataGridView dgvTampilData;
+        private DataGridView dgvSiswa;
         private Button btnKembali;
         private Button btnSimpan;
         private Button btnHapus;
         private DateTimePicker dtpTanggalLahir;
+        private ComboBox cmbKelas;
     }
 }
