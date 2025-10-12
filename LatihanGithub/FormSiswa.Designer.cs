@@ -112,6 +112,7 @@
             txtNISN.Name = "txtNISN";
             txtNISN.Size = new Size(399, 31);
             txtNISN.TabIndex = 6;
+            txtNISN.TextChanged += txtNISN_TextChanged;
             // 
             // txtTelepon
             // 
