@@ -146,6 +146,7 @@
             btnKembali.TabIndex = 12;
             btnKembali.Text = "Kembali";
             btnKembali.UseVisualStyleBackColor = true;
+            btnKembali.Click += btnKembali_Click;
             // 
             // btnSimpan
             // 
