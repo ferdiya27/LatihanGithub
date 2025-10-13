@@ -212,7 +212,13 @@ namespace LatihanGithub
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
-
+            var pilihan = MessageBox.Show("Yakin tutup form?", "Konfirmasi", MessageBoxButtons.YesNo);
+            if (pilihan == DialogResult.Yes)
+            {
+                FormMenu FormMenu = new FormMenu();
+                FormMenu.Show();
+                this.Close();
+            }
         }
     }
 }
